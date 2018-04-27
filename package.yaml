@@ -3,21 +3,12 @@ version:             0.1.0.0
 github:              "wataru86/han2zen"
 license:             BSD3
 author:              "wataru"
-maintainer:          "wataru.yamada.bigmoon@gmail.com"
-copyright:           "Copyright (c) 2017 Wataru Yamada"
+maintainer:          "is151086@cis.aichi-pu.ac.jp"
+copyright:           "Copyright (c) 2018 Wataru Yamada"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
-
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/wataru86/han2zen#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -25,17 +16,6 @@ dependencies:
 
 library:
   source-dirs: src
-
-executables:
-  han2zen-exe:
-    main:                Main.hs
-    source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - han2zen
 
 tests:
   han2zen-test:

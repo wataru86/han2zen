@@ -1,5 +1,5 @@
 module Lib
-    ( someFunc
+    ( han2zen
     ) where
 
 import qualified Data.Text as T
@@ -8,6 +8,9 @@ someFunc :: IO ()
 someFunc = do
   putStrLn "ﾀﾞｲﾔﾃﾞｻﾞｲﾝﾈｯｸ"
   putStrLn . T.unpack . T.concat $ map (T.singleton.hanKanaToZenKana.T.unpack) (g (T.pack "ﾀﾞｲﾔﾃﾞｻﾞｲﾝﾈｯｸ"))
+
+han2zen :: T.Text -> T.Text
+han2zen x = T.concat $ map (T.singleton.hanKanaToZenKana.T.unpack) (g x)
 
 g :: T.Text -> [T.Text]
 g txt
