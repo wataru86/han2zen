@@ -1,29 +1,26 @@
-module Lib
+module Text.Han2Zen
     ( han2zen
     ) where
 
-import qualified Data.Text as T
+-- | テキスト内の半角カタカナを全角にに変える
+han2zen :: String -> String
+han2zen x = map hanKanaToZenKana (chars x)
 
-someFunc :: IO ()
-someFunc = do
-  putStrLn "ﾀﾞｲﾔﾃﾞｻﾞｲﾝﾈｯｸ"
-  putStrLn . T.unpack . T.concat $ map (T.singleton.hanKanaToZenKana.T.unpack) (g (T.pack "ﾀﾞｲﾔﾃﾞｻﾞｲﾝﾈｯｸ"))
+-- | 半角の濁点の有無で文字ごとに分ける
+chars :: String -> [String]
+chars [] = []
+chars [x] = [[x]]
+chars txt
+  | isDakuten (txt !! 1) = take 2 txt : chars (drop 2 txt)
+  | otherwise                 = take 1 txt : chars (drop 1 txt)
 
-han2zen :: T.Text -> T.Text
-han2zen x = T.concat $ map (T.singleton.hanKanaToZenKana.T.unpack) (g x)
-
-g :: T.Text -> [T.Text]
-g txt
-  | txt == T.empty            = []
-  | T.length txt == 1         = [txt]
-  | isDakuten (T.index txt 1) = T.take 2 txt : g (T.drop 2 txt)
-  | otherwise                 = T.take 1 txt : g (T.drop 1 txt)
-
+-- | 濁点または半濁点を判別する
 isDakuten :: Char -> Bool
 isDakuten 'ﾞ' = True
 isDakuten 'ﾟ' = True
 isDakuten _   = False
 
+-- | 半角を全角文字に
 hanKanaToZenKana :: String -> Char
 hanKanaToZenKana "｡" = '。'
 hanKanaToZenKana "｢" = '「'
