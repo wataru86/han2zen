@@ -3,10 +3,9 @@ module Text.Han2Zen
     , han2zenSafe
     ) where
 
--- | テキスト内の半角カタカナを全角にに変える
-
 import Data.Maybe
 
+-- | テキスト内の半角カタカナを全角にに変える
 han2zen :: String -> String
 han2zen x = map hanKanaToZenKana' (chars x)
 
