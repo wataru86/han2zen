@@ -1,6 +1,7 @@
 module Text.Han2Zen
     ( han2zen
     , han2zenSafe
+    , han2zenSafe'
     ) where
 
 import Data.Maybe
@@ -14,6 +15,9 @@ hanKanaToZenKana' x = either (error $ "Syntax Error: " ++ x) id $ hanKanaToZenKa
 
 han2zenSafe :: String -> Either String String
 han2zenSafe x = mapM hanKanaToZenKana (chars x)
+
+han2zenSafe' :: String -> [Either String Char]
+han2zenSafe' x = map hanKanaToZenKana (chars x)
 
 -- | 半角の濁点の有無で文字ごとに分ける
 chars :: String -> [String]
