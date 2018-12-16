@@ -121,7 +121,7 @@ hanKanaToZenKana "ﾍﾟ" = Right 'ペ'
 hanKanaToZenKana "ﾎﾟ" = Right 'ポ'
 hanKanaToZenKana "ｳﾞ" = Right 'ヴ'
 hanKanaToZenKana [c] = Right c
-hanKanaToZenKana xs = Left $ "Syntax Error: " ++ xs
+hanKanaToZenKana xs = Left xs
 
 hanKana :: String
 hanKana = "｡｢｣､･ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝﾞﾟ"
