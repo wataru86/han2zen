@@ -2,9 +2,13 @@ name:                han2zen
 version:             0.1.0.0
 github:              "wataru86/han2zen"
 license:             BSD3
-author:              "wataru"
-maintainer:          "is151086@cis.aichi-pu.ac.jp"
+author:              Wataru Yamada
+maintainer:          Wataru Yamada <wa.wktk.2525@gmail.com>
 copyright:           "Copyright (c) 2018 Wataru Yamada"
+category:            Text
+synopsis:            Convert Halfwidth Katakana to Fullwidth Katakana.
+description:
+  This package provides functions to convert Halfwidth Katakana to Fullwidth Katakana.
 
 extra-source-files:
 - README.md

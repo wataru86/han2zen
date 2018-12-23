@@ -4,14 +4,17 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f99e3f5242371db12981d7da476da9966e22838a8fdcb91ad7594948c650247a
+-- hash: 6770b8a1ea60d2c8cc2cb64f984ab145e4a23bab9190a24c3f3a04b16a90f824
 
 name:           han2zen
 version:        0.1.0.0
+synopsis:       Convert Halfwidth Katakana to Fullwidth Katakana.
+description:    This package provides functions to convert Halfwidth Katakana to Fullwidth Katakana.
+category:       Text
 homepage:       https://github.com/wataru86/han2zen#readme
 bug-reports:    https://github.com/wataru86/han2zen/issues
-author:         wataru
-maintainer:     is151086@cis.aichi-pu.ac.jp
+author:         Wataru Yamada
+maintainer:     Wataru Yamada <wa.wktk.2525@gmail.com>
 copyright:      Copyright (c) 2018 Wataru Yamada
 license:        BSD3
 license-file:   LICENSE
